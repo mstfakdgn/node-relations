@@ -14,7 +14,11 @@ const customerSchema = mongoose.Schema({
   products: [{
     type:mongoose.Schema.Types.ObjectId,
     ref:'Product'
-  }]
+  }],
+  identifier: {
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Identifier'
+  }
 });
 
 const Customer = mongoose.model("Customer", customerSchema);

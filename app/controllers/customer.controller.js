@@ -27,7 +27,7 @@ const findOne = async (req, res) => {
   const _id = req.params.id;
 
   try {
-    const customer = await Customer.findOne({ _id: _id });
+    const customer = await Customer.findOne({ _id: _id }).populate('identifier').populate('products');
     res.send(customer);
   } catch (error) {
     res.status(500).send(e);
